@@ -46,7 +46,7 @@ async def update_me(
 # ── Tables ────────────────────────────────────────────────────────────────────
 
 def _table_response(table: RestaurantTable) -> dict:
-    qr_url = f"{settings.app_base_url}/t/{str(table.id)}"
+    qr_url = f"{settings.diner_base_url}/t/{str(table.id)}"
     return {
         "id": table.id,
         "table_number": table.table_number,
@@ -132,7 +132,7 @@ async def get_table_qr(
     if not table:
         raise HTTPException(status_code=404, detail="Table not found")
 
-    url = f"{settings.app_base_url}/t/{table_id}"
+    url = f"{settings.diner_base_url}/t/{table_id}"
     qr = qrcode.QRCode(version=1, box_size=10, border=4)
     qr.add_data(url)
     qr.make(fit=True)

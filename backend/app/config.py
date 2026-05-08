@@ -13,6 +13,7 @@ class Settings(BaseSettings):
     encryption_key: str = "dev-encryption-key-32-bytes-here"
 
     app_base_url: str = "http://localhost:8000"
+    diner_base_url: str = "http://localhost:5173"
     mock_gateway_base_url: str = "http://localhost:8000/mock-gateway"
     mock_gateway_secret: str = "mock-gateway-webhook-secret"
     foodics_webhook_secret: str = "foodics-webhook-secret"

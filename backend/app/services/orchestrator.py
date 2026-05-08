@@ -131,7 +131,7 @@ class PaymentOrchestrator:
         Returns the checkout URL to redirect the diner to.
         """
         webhook_url = f"{settings.app_base_url}/webhooks/gateway"
-        return_url = f"{settings.app_base_url.replace("8000","5173")}/t/{bill_id}/confirm?bill_id={bill_id}&amount={float(amount)}"
+        return_url = f"{settings.diner_base_url}/t/{bill_id}/confirm?bill_id={bill_id}&amount={float(amount)}"
 
         payload = {
             "merchant_id": api_key,
